@@ -1,0 +1,85 @@
+.profile-position {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 20px 0px 0 20px;
+}
+
+.lawyer-availability {
+  width: 50px;
+}
+
+.profile-position h4{
+  font-size: 24px;
+  margin-left: 20px;
+}
+
+.profile-text {
+  font-size: 20px;
+  }
+  h4 {
+}
+
+.text-position {
+  font-size: 11px;
+  margin-bottom: 0;
+}
+
+.basic-info {
+  margin: 20px 20px;
+}
+
+.basic-info p {
+  font-size: 15px;
+}
+
+.button-position {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 20px 0px;
+
+  .btn {
+    margin-bottom: 15px;
+  }
+}
+
+#bigger-btn-light {
+  font-size: 20px;
+  width: 160px;
+  height: 55px;
+  padding: 10px 2px 10px 2px;
+}
+
+.bigger-btn-primary {
+  font-size: 19px;
+  padding: 10px 15px 10px 15px;
+}
+
+.bigger-btn-secondary {
+  font-size: 19px;
+  padding: 10px 15px 10px 15px;
+}
+
+#description-position {
+  margin: 20px 20px 0 20px;
+  h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  p {
+    font-size: 14px;
+    font-weight: lighter;
+  }
+}
+
+.review-position {
+  display: flex;
+  justify-content: space-around;
+}
+
+#review-size {
+  width: 370px;
+  height: 355px;
+}

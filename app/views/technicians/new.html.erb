@@ -1,0 +1,16 @@
+<div class="container">
+  <h2>Register as Technician</h2>
+
+  <%= simple_form_for @technician do |f| %>
+    <%= f.error_notification %>
+    <div class="form-inputs sign-up-form">
+      <%= f.input :description %>>
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit, "Submit & Connect with Stripe", class: 'btn btn-primary' %>
+    </div>
+  <% end %>
+</div>

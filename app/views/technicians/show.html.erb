@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-10 offset-col-2">
+
+      <div class="profile-position">
+        <%= cl_image_tag(@technician.photo, class: "lawyer-avatar avatar-large") %>
+        <h4 class="profile-text"> <%= @technician.user.first_name %> <%= @technician.user.last_name %>  </h4>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="basic-info">
+    <p class="text-position"><i class="fas fa-map-marker-alt"></i>  &nbsp;&nbsp;<%= @technician.user.address %>  </p>
+    <p class="text-position"><i class="fas fa-gavel"></i>  &nbsp;<%= @technician.categories %></p>
+  </div>
+
+
+  <div id="description-position">
+    <h5>About <%= @technician.user.first_name %> </h5>
+    <p><%= @technician.description %></p>
+  </div>
+
+  <div id="description-position">
+    <h5>Reviews</h5>
+  </div>
+
+
+</div>
+
+

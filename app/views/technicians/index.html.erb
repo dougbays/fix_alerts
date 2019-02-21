@@ -1,0 +1,17 @@
+<%= render 'shared/technician_filter' %>
+<div class="container">
+  <div class="lawyers-container">
+    <div class ="search-results">
+      <h5>Encontramos estos tecnicos para ti:</h5>
+    </div>
+    <% if params[:category] == "Todas las categorias" %>
+      <%= render 'technician_cards' %>
+    <% elsif @search_result.empty? %>
+      <div class="no-matching-result">
+      <p>Disculpa, no tenemos ningún técnico en esta categoría en estos momentos. <i class="far fa-frown"></i></p>
+      </div>
+    <% else %>
+      <%= render 'technician_cards' %>
+    <% end %>
+  </div>
+</div>

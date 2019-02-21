@@ -1,0 +1,40 @@
+.consultation-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: -15px;
+}
+
+.consultation-container h5 {
+  flex-grow: 1;
+  justify-content: space-around;
+}
+
+.info-details p {
+  flex-grow: 1;
+  font-size: 16px;
+}
+
+.info-box {
+  margin: 0px 15px;
+  text-align: center;
+  img {
+    height: 130px;
+    width: 130px;
+  }
+  h5 {
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 20px;
+    font-weight: bold;
+    margin: 30px;
+  }
+}
+
+#keep-calm {
+  border-radius: 155px;
+}
+
+.consultation-lawyer-avatar {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}

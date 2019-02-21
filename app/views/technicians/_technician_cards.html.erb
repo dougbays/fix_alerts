@@ -1,0 +1,16 @@
+<% @technicians.each do |technician| %>
+<%= link_to technician_path(technician), :action => 'go' do %>
+<div class="lawyer-card">
+  <div class="lawyer-avatar">
+    <%=  cl_image_tag(technician.photo) %>
+  </div>
+  <div class="lawyer-description">
+    <h5 id="name-size"><%= technician.user.first_name.capitalize + " " + technician.user.last_name.capitalize %></h5>
+    <hr>
+    <ul>
+      <li><i class="fas fa-thumbs-up"></i> Expertise: <%= truncate(technician.categories, length: 35) %> </li>
+    </ul>
+  </div>
+</div>
+<% end %>
+<% end %>

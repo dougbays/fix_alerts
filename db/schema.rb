@@ -10,10 +10,55 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_09_215452) do
+ActiveRecord::Schema.define(version: 2019_01_28_220354) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "appointments", force: :cascade do |t|
+    t.bigint "client_id"
+    t.bigint "technician_id"
+    t.integer "price_estimate"
+    t.date "date"
+    t.time "time"
+    t.text "description"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_appointments_on_client_id"
+    t.index ["technician_id"], name: "index_appointments_on_technician_id"
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "clients", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_clients_on_user_id"
+  end
+
+  create_table "specialties", force: :cascade do |t|
+    t.bigint "technician_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_specialties_on_category_id"
+    t.index ["technician_id"], name: "index_specialties_on_technician_id"
+  end
+
+  create_table "technicians", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photo"
+    t.index ["user_id"], name: "index_technicians_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +68,19 @@ ActiveRecord::Schema.define(version: 2019_01_09_215452) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "address"
+    t.string "phone_number"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "appointments", "clients"
+  add_foreign_key "appointments", "technicians"
+  add_foreign_key "clients", "users"
+  add_foreign_key "specialties", "categories"
+  add_foreign_key "specialties", "technicians"
+  add_foreign_key "technicians", "users"
 end

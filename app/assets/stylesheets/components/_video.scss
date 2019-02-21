@@ -1,0 +1,122 @@
+#local-media video {
+  width: 25vw;
+  height: 10vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.position-button {
+  position: absolute;
+  bottom: 40px;
+  left: 120px;
+}
+
+.video-placeholder {
+  position: absolute;
+  top: 200px;
+  margin: 0 30px;
+  color: rgba(0,0,0,0.5);
+  text-align: center;
+  z-index: -1;
+}
+
+
+#disconnect {
+  border-radius: 205px;
+}
+
+#start-videochat {
+  margin-top: 15px;
+}
+
+// @media only screen and (min-width: 768px) {
+//    /* tablets and desktop */
+//   #remote-media video {
+//     position: absolute;
+//     width: 100vw;
+//     height: unset;
+//   }
+// }
+
+// @media only screen and (max-width: 767px) {
+//   // phone
+//   #remote-media video {
+//     position: absolute;
+//     height: 100vw;
+//     width: unset;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%,-50%);
+//   }
+// }
+
+// @media only screen and (max-width: 767px) and (orientation: portrait) {
+//    /* portrait phones */
+//   #remote-media video {
+//     position: absolute;
+//     width: unset;
+//     height: 100vh;
+//     top: 50%;
+//     left: 50%;
+//     transform: translate(-50%,-50%);
+//   }
+// }
+
+@media only screen and (min-width: 768px) {
+   /* tablets and desktop */
+  #local-media video {
+    width: 30vw;
+    height: unset;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  // phone
+  #local-media video {
+    width: unset;
+    height: 17vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media only screen and (max-width: 767px) and (orientation: portrait) {
+   /* portrait phones */
+ #local-media video {
+    width: unset;
+    height: 17vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+}
+
+#remote-media {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#remote-media video {
+  /* Make video to at least 100% wide and tall */
+  min-width: 100%;
+  min-height: 100%;
+
+  /* Setting width & height to auto prevents the browser from stretching or squishing the video */
+  width: auto;
+  height: auto;
+
+  /* Center the video */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
